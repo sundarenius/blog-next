@@ -16,7 +16,7 @@ const fetchMethod = async (path: string, method: MethodTypes, payload: any) => {
   try {
     const res = await fetch(buildUrl(path), {
       method,
-      next: { revalidate: 10 }, // seconds
+      cache: 'force-cache',
       headers: {
         'Content-Type': 'application/json',
       },
