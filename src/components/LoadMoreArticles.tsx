@@ -44,7 +44,7 @@ const LoadMoreArticles = ({ startIndex }: any) => {
         )}
 
         <Grid item xs={12} sx={{ marginTop: '20px' }}>
-          <Button onClick={handleMoreArticles} variant="text" sx={{ padding: '20px' }}>
+          <Button onClick={handleMoreArticles} variant="contained" color="primary" sx={{ padding: '20px' }}>
             Load more
           </Button>
         </Grid>

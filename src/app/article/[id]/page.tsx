@@ -24,7 +24,7 @@ const ArticlePage = async ({ params }: any) => {
       justifyContent: 'center',
     }}>
         <div>
-          <Typography variant="subtitle1" component="h2" sx={{ paddingTop: '5px', color: 'blue' }}>
+          <Typography variant="subtitle1" component="h2" sx={{ paddingTop: '5px', color: 'orange' }}>
             Category: {category}
           </Typography>
       

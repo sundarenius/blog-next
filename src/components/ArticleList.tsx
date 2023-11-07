@@ -29,7 +29,7 @@ const ArticleList = ({ articleData, sm }: Props) => {
           />
         </Card>
   
-        <Typography variant="subtitle1" component="h2" sx={{ paddingTop: '5px', color: 'blue' }}>
+        <Typography variant="subtitle1" component="h2" sx={{ paddingTop: '5px', color: 'orange' }}>
           Category: {articleData.category}
         </Typography>
   

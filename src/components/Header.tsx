@@ -5,8 +5,11 @@ import {
 } from '@mui/material';
 
 const Header = ({ children }: any) => {
+  const handleRoute = () => {
+    window.location.href = process.env.MAIN_DOMAIN as string;
+  };
   return (
-    <Box onClick={() => { window.location.href = process.env.MAIN_DOMAIN as string }} className={styles.description} sx={{ cursor: 'pointer' }}>
+    <Box onClick={handleRoute} className={styles.description} sx={{ cursor: 'pointer' }}>
       {children}
     </Box>
   )
