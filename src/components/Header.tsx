@@ -6,7 +6,7 @@ import {
 
 const Header = ({ children }: any) => {
   return (
-    <Box onClick={() => window.location.pathname = '/'} className={styles.description} sx={{ cursor: 'pointer' }}>
+    <Box onClick={() => { window.location.href = process.env.MAIN_DOMAIN as string }} className={styles.description} sx={{ cursor: 'pointer' }}>
       {children}
     </Box>
   )
