@@ -3,7 +3,7 @@
 **/certs
 **/.vscode
 **/.env
-**/src
+**/.next
 data
 Dockerfile
 .dockerignore
@@ -13,5 +13,3 @@ Dockerfile
 
 docker-compose.yml
 
-# Allow dist/src
-!**/dist/src
