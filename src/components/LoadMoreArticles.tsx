@@ -54,12 +54,4 @@ const LoadMoreArticles = ({ startIndex }: any) => {
   )
 }
 
-const getArticleMockData = () => ({
-  img: 'https://stablo-pro.web3templates.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fcijrdavx%2Fproduction%2F05951a0ec1a6ffc54f615ab160649e92fea982d0-800x764.png%3Frect%3D0%2C0%2C800%2C468%26w%3D800%26auto%3Dformat&w=1200&q=75',
-  category: 'Lifestyle',
-  title: 'lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum',
-  date: 0,
-  id: 0,
-})
-
 export default LoadMoreArticles;
