@@ -35,7 +35,7 @@ const LoadMoreArticles = ({ startIndex }: any) => {
     <div className={styles.center}>
       <Grid container spacing={2}>
 
-        { articles.length > 0 && (
+        { articles && articles.length > 0 && (
             articles.map((val: any) => (
               <Grid key={val.articleId} item xs={12} md={4}>
                 <ArticleList articleData={val} sm />

@@ -21,6 +21,8 @@ const getArticles = async () => {
 
 const Landing = async () => {
   const articles = await getArticles();
+  console.log('process.env.CUSTOMER_ID');
+  console.log(process.env.CUSTOMER_ID);
   return (
     <div className={styles.center}>
       <Grid container spacing={2}>
@@ -41,9 +43,11 @@ const Landing = async () => {
           ))
         }
 
-        <Grid item xs={12}>
-          <LoadMoreArticles startIndex={articles.length} />
-        </Grid>
+        {articles && (
+          <Grid item xs={12}>
+            <LoadMoreArticles startIndex={articles.length} />
+          </Grid>
+        )}
 
       </Grid>
 

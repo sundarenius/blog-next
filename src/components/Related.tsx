@@ -37,7 +37,7 @@ const Related = ({ articleId, category }: any) => {
           </Typography>
       </Grid>
 
-      {articles.length > 0 && articles.map((a: any) => (
+      {articles && articles.length > 0 && articles.map((a: any) => (
         <Grid key={a.articleId} item xs={4} md={3}>
           <ArticleList articleData={a} sm />
         </Grid>
