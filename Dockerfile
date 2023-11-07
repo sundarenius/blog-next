@@ -19,6 +19,5 @@ ENV APP_ENV=${APP_ENV}
 
 RUN echo ${APP_ENV}
 RUN yarn install --network-timeout 1000000
-RUN yarn build
 
-CMD ["next", "start"]
+CMD ["yarn", "start"]

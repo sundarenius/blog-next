@@ -3,7 +3,6 @@ import styles from './page.module.css'
 import ArticleList from '@/components/ArticleList';
 import {
   Grid,
-  Button,
 } from '@mui/material';
 import LoadMoreArticles from '@/components/LoadMoreArticles';
 import { API } from '@/http/http';
@@ -27,7 +26,7 @@ const Landing = async () => {
       <Grid container spacing={2}>
 
         {
-          articles.slice(0, 2).map((data: any) => (
+          Array.isArray(articles) && articles.slice(0, 2).map((data: any) => (
             <Grid key={data.articleId} item xs={12} md={6}>
               <ArticleList articleData={data} />
             </Grid>
@@ -35,7 +34,7 @@ const Landing = async () => {
         }
 
         {
-          articles.slice(2, 14).map((data: any) => (
+          Array.isArray(articles) && articles.slice(2, 14).map((data: any) => (
             <Grid key={data.articleId} item xs={12} md={4}>
               <ArticleList articleData={data} sm />
             </Grid>

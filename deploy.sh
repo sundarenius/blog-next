@@ -1,3 +1,4 @@
+yarn build &&
 echo "Push to jd-blog-baas" &&
 echo "heroku container:push web -a jd-blog-baas --arg APP_ENV=production:" &&
 heroku container:push web -a jd-blog-baas --arg APP_ENV=production &&
