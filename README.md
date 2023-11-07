@@ -2,6 +2,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+``````
+docker build -t blog-next .
+docker run -it -p 3001:3001 -e PORT=3001 -e ENVIRONMENT=production --name blog-app blog-next
+``````
+
 First, run the development server:
 
 ```bash
