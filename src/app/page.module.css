@@ -8,6 +8,13 @@
   min-height: 100vh;
 }
 
+@media (max-width: 700px) {
+  .main {
+    padding-top: 40px;
+    padding: 1rem;
+  }
+}
+
 .description {
   display: inherit;
   justify-content: inherit;

@@ -3,9 +3,7 @@
 const TextContent = ({ content }: any) => {
   return (
     <div id="text-content">
-      {content.split('<p>').map((c: string) => (
-        <p key={Math.random()}>{c.replace('</p>', '')}</p>
-      ))}
+      <div style={{ marginTop: '20px' }} dangerouslySetInnerHTML={{ __html: content }} />
     </div>
   );
 }

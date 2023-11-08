@@ -18,6 +18,7 @@ const ArticlePage = async ({ params }: any) => {
   return (
     <div style={{
       padding: '0',
+      paddingTop: '30px',
       margin: '10px',
       maxWidth: '1000px',
       display: 'flex',
@@ -37,7 +38,7 @@ const ArticlePage = async ({ params }: any) => {
           <img
             src={pictureUrl}
             alt="article-image"
-            style={{ maxHeight: '500px', maxWidth: '500px' }}
+            style={{ maxHeight: '500px', width: '500px', maxWidth: '90vw' }}
           />
 
           <TextContent content={content} />

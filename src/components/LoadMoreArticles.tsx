@@ -8,27 +8,33 @@ import {
 } from '@mui/material';
 import { API } from '@/http/http';
 
-const getArticles = async (startIndex: number, setArticles: any, articles: any) => {
+const maxLength = 11;
+const getArticles = async (startIndex: number, setArticles: any, articles: any, setShowMoreBtn: any) => {
   const res = await API.getArticles({
     keyMatch: {
       customerId: [process.env.CUSTOMER_ID as string],
     },
     orderByKey: 'created',
     startIndex,
-    max: 11,
+    max: maxLength,
   });
   
   setArticles([
     ...articles,
     ...res.data
   ]);
+
+  if (res.data.length === 0) {
+    setShowMoreBtn(false);
+  }
 };
 
 const LoadMoreArticles = ({ startIndex }: any) => {
   const [articles, setArticles] = useState([] as any);
+  const [showMoreBtn, setShowMoreBtn] = useState(true);
 
   const handleMoreArticles = () => {
-    getArticles((startIndex + articles.length), setArticles, articles);
+    getArticles((startIndex + articles.length), setArticles, articles, setShowMoreBtn);
   };
 
   return (
@@ -43,11 +49,13 @@ const LoadMoreArticles = ({ startIndex }: any) => {
             ))
         )}
 
-        <Grid item xs={12} sx={{ marginTop: '20px' }}>
-          <Button onClick={handleMoreArticles} variant="contained" color="primary" sx={{ padding: '20px' }}>
-            Load more
-          </Button>
-        </Grid>
+        {showMoreBtn && (
+          <Grid item xs={12} sx={{ marginTop: '20px' }}>
+            <Button onClick={handleMoreArticles} variant="contained" color="primary" size="large">
+              Load more
+            </Button>
+          </Grid>
+        )}
 
       </Grid>
     </div>

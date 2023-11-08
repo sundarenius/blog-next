@@ -27,6 +27,10 @@ const Landing = async () => {
     <div className={styles.center}>
       <Grid container spacing={2}>
 
+        <Grid item xs={12}>
+          <h1>Featured articles</h1>
+        </Grid>
+
         {
           Array.isArray(articles) && articles.slice(0, 2).map((data: any) => (
             <Grid key={data.articleId} item xs={12} md={6}>
@@ -34,6 +38,11 @@ const Landing = async () => {
             </Grid>
           ))
         }
+
+
+        <Grid sx={{ marginTop: '20px' }} item xs={12}>
+          <h3>More articles</h3>
+        </Grid>
 
         {
           Array.isArray(articles) && articles.slice(2, 14).map((data: any) => (

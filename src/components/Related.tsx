@@ -32,13 +32,13 @@ const Related = ({ articleId, category }: any) => {
     <Grid container spacing={2}>
 
       <Grid item xs={12}>
-          <Typography variant="h3" component="h2" sx={{ paddingBottom: '5px'}}>
+          <Typography variant="h5" component="h2" sx={{ paddingBottom: '5px'}}>
             Related articles
           </Typography>
       </Grid>
 
       {articles && articles.length > 0 && articles.map((a: any) => (
-        <Grid key={a.articleId} item xs={4} md={3}>
+        <Grid key={a.articleId} item xs={12} md={3}>
           <ArticleList articleData={a} sm />
         </Grid>
       ))}
