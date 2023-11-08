@@ -10,13 +10,15 @@ enum MethodTypes {
 
 const baseUrl = `${urlConfig[process.env.NODE_ENV as Environments].apiEndpoint}`;
 
-const buildUrl = (path: string) => `${baseUrl}${path}`;
+// Generate a unique cache-busting key (timestamp in this example)
+const cacheBustingKey = () => new Date().getTime();
+const buildUrl = (path: string) => `${baseUrl}${path}?c=${cacheBustingKey()}`;
 
 const fetchMethod = async (path: string, method: MethodTypes, payload: any) => {
   try {
     const res = await fetch(buildUrl(path), {
       method,
-      cache: 'force-cache',
+      next: { revalidate: 0 },
       headers: {
         'Content-Type': 'application/json',
       },
