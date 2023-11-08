@@ -15,7 +15,7 @@ const getArticles = async (setArticles: any, articleId: string, category: string
     },
     orderByKey: 'created',
     startIndex: 0,
-    max: 12,
+    max: 9,
   });
   
   setArticles(res.data.filter((a: any) => a.articleId !== articleId));
