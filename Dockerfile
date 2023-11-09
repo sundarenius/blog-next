@@ -25,6 +25,4 @@ RUN echo "NEXT_PUBLIC_MAIN_DOMAIN:" && echo $NEXT_PUBLIC_MAIN_DOMAIN
 
 RUN yarn install --network-timeout 1000000
 
-RUN yarn build
-
 CMD ["yarn", "start"]
