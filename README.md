@@ -3,8 +3,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Getting Started
 
 ``````
-docker build -t blog-next --build-arg NEXT_PUBLIC_CUSTOMER_ID=hej .
-docker run -it -p 3001:3001 -e PORT=3001 -e ENVIRONMENT=production --name blog-app blog-next
+docker build -t blog-next --build-arg NEXT_PUBLIC_CUSTOMER_ID="31392486-614f-4a34-bd0f-273305505dc3_TID_-28" --build-arg NEXT_PUBLIC_MAIN_DOMAIN="https://www.jwdate.org" .
+docker run -it -p 3001:3001 -e PORT=3001 -e ENVIRONMENT=production -e NODE_ENV=production --name blog-app blog-next
 ``````
 
 First, run the development server:
