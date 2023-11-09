@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy:jd": "./deploy-jd.sh"
+    "deploy:jd": "./deploy-jd.sh",
+    "deploy:pb": "./deploy-pb.sh"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
