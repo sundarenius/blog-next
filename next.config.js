@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    CUSTOMER_ID: process.env.CUSTOMER_ID,
-    TITLE: process.env.TITLE,
-    DESCRIPTION: process.env.DESCRIPTION,
-    MAIN_DOMAIN: process.env.MAIN_DOMAIN,
+    NEXT_PUBLIC_CUSTOMER_ID: process.env.NEXT_PUBLIC_CUSTOMER_ID,
+    NEXT_PUBLIC_TITLE: process.env.NEXT_PUBLIC_TITLE,
+    NEXT_PUBLIC_DESCRIPTION: process.env.NEXT_PUBLIC_DESCRIPTION,
+    NEXT_PUBLIC_MAIN_DOMAIN: process.env.NEXT_PUBLIC_MAIN_DOMAIN,
   }
 }
 

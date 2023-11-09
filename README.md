@@ -3,7 +3,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Getting Started
 
 ``````
-docker build -t blog-next .
+docker build -t blog-next --build-arg NEXT_PUBLIC_CUSTOMER_ID=hej .
 docker run -it -p 3001:3001 -e PORT=3001 -e ENVIRONMENT=production --name blog-app blog-next
 ``````
 

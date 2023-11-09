@@ -12,7 +12,7 @@ const maxLength = 11;
 const getArticles = async (startIndex: number, setArticles: any, articles: any, setShowMoreBtn: any) => {
   const res = await API.getArticles({
     keyMatch: {
-      customerId: [process.env.CUSTOMER_ID as string],
+      customerId: [process.env.NEXT_PUBLIC_CUSTOMER_ID as string],
     },
     orderByKey: 'created',
     startIndex,

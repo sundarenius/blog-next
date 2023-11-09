@@ -9,8 +9,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: process.env.TITLE || 'Blog template',
-  description: process.env.DESCRIPTION || 'My blog template',
+  title: process.env.NEXT_PUBLIC_TITLE || 'Blog template',
+  description: process.env.NEXT_PUBLIC_DESCRIPTION || 'My blog template',
 }
 
 export default function RootLayout({

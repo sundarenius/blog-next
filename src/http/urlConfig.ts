@@ -9,7 +9,6 @@ const config = {
   },
   [Environments.DEVELOPMENT]: {
     apiEndpoint: 'http://localhost:3030/api/v1',
-    // apiEndpoint: 'https://baas-server-production-3c5dcc742018.herokuapp.com/api/v1',
   },
 };
 

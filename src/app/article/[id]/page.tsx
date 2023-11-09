@@ -53,6 +53,7 @@ const ArticlePage = async ({ params }: any) => {
 
 const getArticleById = async (id: string) => {
   const res = await API.getArticle(id);
+  console.log(res);
   const {
     pictureUrl,
     category,
@@ -68,6 +69,7 @@ const getArticleById = async (id: string) => {
     id,
     content
   }
+  console.log('getArticleById data:');
   console.log(data);
   return data;
 };

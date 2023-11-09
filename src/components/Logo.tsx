@@ -1,5 +1,5 @@
 const Logo = () => {
-  const txt = process.env.REACT_APP_LOGO_NAME;
+  const txt = process.env.NEXT_PUBLIC_LOGO;
 
   if (typeof window !== 'undefined') {
     // Code that depends on `window` object goes here

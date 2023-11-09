@@ -3,6 +3,9 @@
 **/certs
 **/.vscode
 **/.env
+**/.env.local
+**/.env.production
+**/.next
 data
 Dockerfile
 .dockerignore

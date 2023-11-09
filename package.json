@@ -4,17 +4,17 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build:development": "NODE_ENV=development next build",
-    "build:production": "NODE_ENV=production next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "./deploy.sh"
+    "deploy:jd": "./deploy-jd.sh"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.16",
     "@mui/material": "^5.14.16",
+    "@mui/styles": "^5.14.17",
     "markdown-to-jsx": "^7.3.2",
     "next": "14.0.1",
     "react": "^18",

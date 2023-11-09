@@ -12,7 +12,7 @@ const baseUrl = `${urlConfig[process.env.NODE_ENV as Environments].apiEndpoint}`
 
 // Generate a unique cache-busting key (timestamp in this example)
 const cacheBustingKey = () => new Date().getTime();
-const buildUrl = (path: string) => `${baseUrl}${path}?c=${cacheBustingKey()}`;
+const buildUrl = (path: string) => `${baseUrl}${path}${path.includes('?') ? '&' : '?'}c=${cacheBustingKey()}`;
 
 const fetchMethod = async (path: string, method: MethodTypes, payload: any) => {
   try {
@@ -21,6 +21,7 @@ const fetchMethod = async (path: string, method: MethodTypes, payload: any) => {
       next: { revalidate: 0 },
       headers: {
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${process.env.MY_API_POST_KEY || 'x'}`,
       },
       ...payload && { body: JSON.stringify(payload) },
     });
@@ -40,7 +41,14 @@ export const API = {
     return data;
   },
   getArticle: async (articleId: string) => {
-    const path = `/article?articleId=${articleId}&customerId=${process.env.CUSTOMER_ID}`;
+    console.log('process.env.NEXT_PUBLIC_CUSTOMER_ID:');
+    console.log(process.env.NEXT_PUBLIC_CUSTOMER_ID);
+    const path = `/article?articleId=${articleId}&customerId=${process.env.NEXT_PUBLIC_CUSTOMER_ID}`;
+    const data = await fetchMethod(path, MethodTypes.GET, null);
+    return data;
+  },
+  getCategories: async () => {
+    const path = `/config?categoriesOnly=true&customerId=${process.env.NEXT_PUBLIC_CUSTOMER_ID}`;
     const data = await fetchMethod(path, MethodTypes.GET, null);
     return data;
   },
