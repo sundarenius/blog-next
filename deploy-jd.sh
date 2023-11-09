@@ -1,3 +1,5 @@
+rm -rf /.next &&
+
 export NEXT_PUBLIC_CUSTOMER_ID="31392486-614f-4a34-bd0f-273305505dc3_TID_-28" &&
 export NEXT_PUBLIC_MAIN_DOMAIN="https://www.jwdate.org" &&
 echo "yarn build" &&
