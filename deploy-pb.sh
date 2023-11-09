@@ -1,5 +1,10 @@
-export NEXT_PUBLIC_CUSTOMER_ID="276a85c3-06b4-45e4-a409-ee8640cf48ad_TID_-18" &&
-export NEXT_PUBLIC_MAIN_DOMAIN="https://www.philippinebeauty.com" &&
+echo `NEXT_PUBLIC_LOGO="PhilippineBeauty.com"
+NEXT_PUBLIC_CUSTOMER_ID="276a85c3-06b4-45e4-a409-ee8640cf48ad_TID_-18"
+NEXT_PUBLIC_MAIN_DOMAIN="https://www.philippinebeauty.com"
+NEXT_PUBLIC_TITLE="PhilippineBeauty.com | Blog & Articles"
+NEXT_PUBLIC_DESCRIPTION="Interesting articles and information about dating topics"
+MY_API_POST_KEY="asdasdmplgnng.fdkfnd97567299--oknkeh"` > ./.env.production &&
+
 echo "yarn build" &&
 yarn build &&
 echo "Push to pb-blog-baas" &&
