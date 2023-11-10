@@ -14,6 +14,7 @@ const ArticlePage = async ({ params }: any) => {
     created,
     pictureUrl,
     content,
+    tag,
   } = await getArticleById(params.id);
   return (
     <div style={{
@@ -37,7 +38,7 @@ const ArticlePage = async ({ params }: any) => {
 
           <img
             src={pictureUrl}
-            alt="article-image"
+            alt={tag || 'article'}
             style={{ maxHeight: '500px', width: '500px', maxWidth: '90vw' }}
           />
 
@@ -60,6 +61,7 @@ const getArticleById = async (id: string) => {
     title,
     created,
     content,
+    tag,
   } = res.data;
   const data = {
     pictureUrl,
@@ -67,7 +69,8 @@ const getArticleById = async (id: string) => {
     title,
     created,
     id,
-    content
+    content,
+    tag,
   }
   console.log('getArticleById data:');
   console.log(data);
