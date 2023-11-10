@@ -9,7 +9,8 @@
     "lint": "next lint",
     "deploy:jd": "./deploy-jd.sh",
     "deploy:pb": "./deploy-pb.sh",
-    "deploy:all": "yarn deploy:jd && yarn deploy:pb"
+    "deploy:qa": "./deploy-qa.sh",
+    "deploy:all": "yarn deploy:jd && yarn deploy:pb && yarn deploy:qa"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
