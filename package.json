@@ -10,7 +10,8 @@
     "deploy:jd": "./deploy-jd.sh",
     "deploy:pb": "./deploy-pb.sh",
     "deploy:qa": "./deploy-qa.sh",
-    "deploy:all": "yarn deploy:jd && yarn deploy:pb && yarn deploy:qa"
+    "deploy:gr": "./deploy-gr.sh",
+    "deploy:all": "yarn deploy:jd && yarn deploy:pb && yarn deploy:qa && yarn deploy:gr"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
