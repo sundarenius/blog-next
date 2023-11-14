@@ -39,7 +39,7 @@ const ArticlePage = async ({ params }: any) => {
           <img
             src={pictureUrl}
             alt={tag || 'article'}
-            style={{ maxHeight: '500px', width: '500px', maxWidth: '90vw' }}
+            style={{ height: '500px', maxWidth: '90vw' }}
           />
 
           <TextContent content={content} />
