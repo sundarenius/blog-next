@@ -9,9 +9,11 @@ const Header = ({ children }: any) => {
     window.location.href = process.env.NEXT_PUBLIC_MAIN_DOMAIN as string;
   };
   return (
-    <Box onClick={handleRoute} className={styles.description} sx={{ cursor: 'pointer' }}>
-      {children}
-    </Box>
+    <a href={process.env.NEXT_PUBLIC_MAIN_DOMAIN}>
+      <Box className={styles.description} sx={{ cursor: 'pointer' }}>
+        {children}
+      </Box>
+    </a>
   )
 }
 
