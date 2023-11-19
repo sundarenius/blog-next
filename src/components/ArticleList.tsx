@@ -25,7 +25,7 @@ const ArticleList = ({ articleData, sm }: Props) => {
           <img
             src={articleData.pictureUrl}
             alt={articleData.tag || 'article'}
-            style={{ maxHeight: '420px', maxWidth: '100%' }}
+            style={{ maxHeight: '500px', maxWidth: '100%' }}
           />
         </Card>
   
