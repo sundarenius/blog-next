@@ -33,7 +33,7 @@ const ArticleList = ({ articleData, sm }: Props) => {
           Category: {articleData.category}
         </Typography>
   
-        <Typography variant="h5" component="h3" sx={{ paddingTop: '5px' }}>
+        <Typography variant="h5" component="h1" sx={{ paddingTop: '5px' }}>
           {articleData.title}
         </Typography>
   

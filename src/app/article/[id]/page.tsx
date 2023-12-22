@@ -30,7 +30,7 @@ const ArticlePage = async ({ params }: any) => {
             Category: {category}
           </Typography>
       
-          <Typography variant="h5" component="h3" sx={{ paddingTop: '5px' }}>
+          <Typography variant="h5" component="h1" sx={{ paddingTop: '5px' }}>
             {title}
           </Typography>
 
