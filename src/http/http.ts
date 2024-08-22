@@ -14,9 +14,10 @@ const baseUrl = `${urlConfig[process.env.NODE_ENV as Environments].apiEndpoint}`
 const cacheBustingKey = () => new Date().getTime();
 const buildUrl = (path: string) => `${baseUrl}${path}${path.includes('?') ? '&' : '?'}c=${cacheBustingKey()}`;
 
-const fetchMethod = async (path: string, method: MethodTypes, payload: any) => {
+const fetchMethod = async (path: string, method: MethodTypes, payload: any, fullUrl = false) => {
   try {
-    const res = await fetch(buildUrl(path), {
+    const url = fullUrl ? path : buildUrl(path);
+    const res = await fetch(url, {
       method,
       next: { revalidate: 0 },
       headers: {
@@ -35,20 +36,25 @@ const fetchMethod = async (path: string, method: MethodTypes, payload: any) => {
 };
 
 export const API = {
-  getArticles: async (filter: IFilter) => {
-    const path = '/baas/article';
+  getArticlesServer: async (filter: IFilter) => {
+    const path = '/api/v1/baas/article';
     const data = await fetchMethod(path, MethodTypes.POST, { filter });
+    return data;
+  },
+  getArticles: async (filter: IFilter) => {
+    const path = 'http://localhost:3000/api/get-article';
+    const data = await fetchMethod(path, MethodTypes.POST, { filter }, true);
     return data;
   },
   getArticle: async (articleId: string) => {
     console.log('process.env.NEXT_PUBLIC_CUSTOMER_ID:');
     console.log(process.env.NEXT_PUBLIC_CUSTOMER_ID);
-    const path = `/baas/article?articleId=${articleId}&customerId=${process.env.NEXT_PUBLIC_CUSTOMER_ID}`;
+    const path = `/api/v1/baas/article?articleId=${articleId}&customerId=${process.env.NEXT_PUBLIC_CUSTOMER_ID}`;
     const data = await fetchMethod(path, MethodTypes.GET, null);
     return data;
   },
   getCategories: async () => {
-    const path = `/baas/config?categoriesOnly=true&customerId=${process.env.NEXT_PUBLIC_CUSTOMER_ID}`;
+    const path = `/api/v1/baas/config?categoriesOnly=true&customerId=${process.env.NEXT_PUBLIC_CUSTOMER_ID}`;
     const data = await fetchMethod(path, MethodTypes.GET, null);
     return data;
   },
