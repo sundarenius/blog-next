@@ -2,7 +2,7 @@ import { Environments } from '@/types/globals';
 
 const config = {
   [Environments.PRODUCTION]: {
-    apiEndpoint: 'https://baas-server-production-3c5dcc742018.herokuapp.com/api/v1',
+    apiEndpoint: 'http://16.171.64.87/api/v1',
   },
   [Environments.STAGING]: {
     apiEndpoint: 'heroku.blabla/api/v1',

@@ -36,19 +36,19 @@ const fetchMethod = async (path: string, method: MethodTypes, payload: any) => {
 
 export const API = {
   getArticles: async (filter: IFilter) => {
-    const path = '/article';
+    const path = '/baas/article';
     const data = await fetchMethod(path, MethodTypes.POST, { filter });
     return data;
   },
   getArticle: async (articleId: string) => {
     console.log('process.env.NEXT_PUBLIC_CUSTOMER_ID:');
     console.log(process.env.NEXT_PUBLIC_CUSTOMER_ID);
-    const path = `/article?articleId=${articleId}&customerId=${process.env.NEXT_PUBLIC_CUSTOMER_ID}`;
+    const path = `/baas/article?articleId=${articleId}&customerId=${process.env.NEXT_PUBLIC_CUSTOMER_ID}`;
     const data = await fetchMethod(path, MethodTypes.GET, null);
     return data;
   },
   getCategories: async () => {
-    const path = `/config?categoriesOnly=true&customerId=${process.env.NEXT_PUBLIC_CUSTOMER_ID}`;
+    const path = `/baas/config?categoriesOnly=true&customerId=${process.env.NEXT_PUBLIC_CUSTOMER_ID}`;
     const data = await fetchMethod(path, MethodTypes.GET, null);
     return data;
   },
